@@ -1,4 +1,5 @@
 
+
 function getComputerChoice(){ 
 
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -16,24 +17,61 @@ function getComputerChoice(){
     return choice2;
 }
 
+
 function playround(playerPick, computerPick){
 
-    let result;
+    
 
     if (playerPick.toLowerCase() === computerPick) {
-        result = "YOU TIED!"
+        
+        return tie;
+
+
     }
-    else if (playerPick.toLowerCase() === "rock" && computerPick === "paper") {
-        result = "You Lose LMAO"
+    else if (playerPick.toLowerCase() === "rock" && computerPick === "paper" || playerPick.toLowerCase() === "scissors" && computerPick === "rock" || playerPick.toLowerCase() === "paper" && computerPick === "scissors") {
+
+        ++computerScore
+        return lose;
+        
     }
     else {
-        result = "You WIN YAY"
+        
+        ++userScore;
+        return win;
     }
 
-    return result
+    
+    
 }
 
-const playerPick = "rOck";
-const computerPick = getComputerChoice();
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
+let win = "You win";
+let lose = "You lose";
+let tie = "It is a tie";
 
-console.log(playround(playerPick, computerPick));
+
+    
+for(var i=0;i<5;i++){
+playerPick = prompt("Pick a move");
+computerPick = getComputerChoice()
+console.log(playround(playerPick, computerPick))
+console.log("your score = " + userScore);
+console.log("Computer's score = " + computerScore);
+}
+
+if (computerScore < userScore) {
+    console.log ("You Win, faggot :)");
+}
+
+else if (computerScore > userScore) {
+    console.log ("You lose, faggot :(")
+}
+
+else if (computerScore === userScore) {
+    console.log ("Nice tie faggot :/")
+}
+    
+    
+
+
