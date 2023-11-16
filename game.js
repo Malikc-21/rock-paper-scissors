@@ -61,15 +61,15 @@ console.log("Computer's score = " + computerScore);
 }
 
 if (computerScore < userScore) {
-    console.log ("You Win, faggot :)");
+    console.log ("You Win :)");
 }
 
 else if (computerScore > userScore) {
-    console.log ("You lose, faggot :(")
+    console.log ("You lose :(")
 }
 
 else if (computerScore === userScore) {
-    console.log ("Nice tie faggot :/")
+    console.log ("Nice tie  :/")
 }
     
     
